@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>JS Arithmetic Operators Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Roboto, "Segoe UI", Arial; padding: 20px; max-width: 900px; margin: auto; }
+    h1 { margin-bottom: 6px; }
+    p.lead { color: #333; margin-top: 0; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { text-align: left; padding: 8px; border: 1px solid #ddd; }
+    th { background: #f7f7f7; }
+    code { background:#f3f3f3; padding:2px 6px; border-radius:4px; }
+    .note { font-size: 0.9rem; color:#555; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Arithmetic Operators — Demo</h1>
+  <p class="lead">Examples below use sample values and show each expression and the computed result.</p>
+
+  <table id="results">
+    <thead>
+      <tr><th>Expression</th><th>Result</th><th>Notes</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <p class="note">Tip: open your browser console to inspect values or modify the script for other examples.</p>
+
+  <script>
+    function addRow(expr, result, note = "") {
+      const tbody = document.querySelector("#results tbody");
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td><code>${expr}</code></td><td><code>${String(result)}</code></td><td>${note}</td>`;
+      tbody.appendChild(tr);
+    }
+
+    const a = 10;
+    const b = 3;
+    addRow("a = 10", a, "base value");
+    addRow("b = 3", b, "base value");
+
+    addRow("a + b", a + b, "addition");
+    addRow("a - b", a - b, "subtraction");
+    addRow("a * b", a * b, "multiplication");
+    addRow("a / b", a / b, "division (floating point)");
+    addRow("a % b", a % b, "modulus (remainder)");
+    addRow("a ** b", a ** b, "exponentiation (a to the power b)");
+
+    const strNum = "42";
+    addRow("+strNum  // +\"42\"", +strNum, "unary plus converts to number");
+    addRow("-strNum  // -\"42\"", -strNum, "unary minus converts and negates");
+
+    let x1 = 5;
+    addRow("let x1 = 5", x1, "");
+    addRow("++x1  (prefix)", ++x1, "increments first, then returns (now x1 = 6)");
+    let x2 = 5;
+    addRow("let x2 = 5", x2, "");
+    addRow("x2++  (postfix)", x2++, "returns old value (5) then increments (x2 becomes 6)");
+    addRow("current x2 after x2++", x2, "shows x2 = 6");
+
+    let y1 = 5;
+    addRow("let y1 = 5", y1, "");
+    addRow("--y1  (prefix decrement)", --y1, "decrements then returns (now y1 = 4)");
+    let y2 = 5;
+    addRow("let y2 = 5", y2, "");
+    addRow("y2--  (postfix decrement)", y2--, "returns old value (5) then decrements (y2 becomes 4)");
+    addRow("current y2 after y2--", y2, "shows y2 = 4");
+
+    let c = 8;
+    addRow("let c = 8", c, "");
+    c += 2; addRow("c += 2", c, "equivalent to c = c + 2 (now 10)");
+    c -= 3; addRow("c -= 3", c, "equivalent to c = c - 3 (now 7)");
+    c *= 4; addRow("c *= 4", c, "equivalent to c = c * 4 (now 28)");
+    c /= 7; addRow("c /= 7", c, "equivalent to c = c / 7 (now 4)");
+    c %= 3; addRow("c %= 3", c, "equivalent to c = c % 3 (now 1)");
+    let d = 2;
+    addRow("let d = 2", d, "");
+    d **= 5; addRow("d **= 5", d, "equivalent to d = d ** 5 (now 32)");
+
+    addRow("3 + 4 * 2", 3 + 4 * 2, "multiplication before addition (result 11)");
+    addRow("(3 + 4) * 2", (3 + 4) * 2, "parentheses change order (result 14)");
+    addRow("7 / 2", 7 / 2, "7 divided by 2 = 3.5 (JS uses floating point)");
+    addRow("Math.floor(7 / 2)", Math.floor(7 / 2), "use Math.floor for integer-like truncation");
+
+    addRow("'hello' - 2", "hello" - 2, "NaN (invalid numeric operation)");
+    addRow("'5' + 2", "5" + 2, "string concatenation (result '52')");
+
+    addRow("Note", "", "Binary + concatenates when either operand is a string; otherwise it adds numbers.");
+  </script>
+</body>
+</html>

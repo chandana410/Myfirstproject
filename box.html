@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box with Image and Title</title>
+</head>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background-color: aliceblue;
+    }
+    .title-box {
+      border: 2px solid black;
+      padding: 10px 20px;
+      width: fit-content;
+      background-color: #f8f8f8;
+      font-weight: bold;
+      margin-bottom: 15px; 
+    }
+    .outer-box {
+      border: 3px solid black;  
+      padding: 20px;            
+      display: inline-block;    
+    }
+
+    .inner-box {
+      border: 3px solid black;   
+      width: 200px;
+      height: 180px;
+      overflow: hidden;         
+    }
+
+    .inner-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;         
+    }
+  </style>
+
+<body>
+  
+  <!-- Title Box on Left -->
+  <div class="title-box">
+    Beautiful Flower
+  </div>
+
+  <!-- Outer Image Box also on Left -->
+  <div class="outer-box">
+    <div class="inner-box">
+      <img src="./leaf.css/leaf.jpg
+    " alt="My Image">
+    </div>
+  </div>
+
+</body>
+</html>

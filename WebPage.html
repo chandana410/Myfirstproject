@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome — A Friendly Webpage</title>
+  <style>
+    
+    :root{ --accent:#2563eb; --muted:#6b7280; --bg:#f8fafc }
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a; line-height:1.6}
+    .container{max-width:900px;margin:40px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(12,14,20,0.06)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    h1{font-size:1.8rem;margin:0}
+    p.lead{color:var(--muted);margin:8px 0 20px}
+    nav a{margin-left:12px;color:var(--accent);text-decoration:none;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px}
+    .card{padding:18px;border-radius:10px;background:#fbfdff;border:1px solid rgba(37,99,235,0.06)}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .feature h3{margin:0 0 8px;font-size:1.05rem}
+    footer{margin-top:24px;color:var(--muted);font-size:0.9rem;text-align:center}
+    form{display:grid;gap:8px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6eef9;font-size:0.95rem}
+    button{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:0;font-weight:600;cursor:pointer}
+    small.note{color:var(--muted)}
+    @media(min-width:720px){ .hero{grid-template-columns:2fr 1fr} }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div>
+        <h1>Hi — welcome to my friendly page 👋</h1>
+        <p class="lead">I wrote this page to show how HTML can be warm and readable — like talking to someone, not reading a manual.</p>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <article class="card">
+          <h2 id="hero-heading">A small page written in a human voice</h2>
+          <p>Instead of dense paragraphs, I use short sentences and friendly examples. This makes the content easier to scan and feel more personal.</p>
+
+          <ul>
+            <li><strong>Readable:</strong> Clear headings and short paragraphs.</li>
+            <li><strong>Useful:</strong> A contact form so people can say hello.</li>
+            <li><strong>Simple:</strong> One file, open it in a browser and you're done.</li>
+          </ul>
+
+          <p class="note">Tip: Try editing the text — keep the tone friendly and conversational.</p>
+        </article>
+      </div>
+
+      <aside class="card" aria-label="Quick note">
+        <h3>Why this style?</h3>
+        <p class="note">People skim the web. Humanised writing reduces friction and invites action. Think: one friend explaining something to another.</p>
+      </aside>
+    </section>
+
+    <section id="about" style="margin-top:20px">
+      <h2>About this page</h2>
+      <p>Short, plain-language explanations — no jargon unless it helps. If a technical term appears, explain it right away. That's what I did here.</p>
+
+      
+
+      <h3>How to use it</h3>
+      <p>Open <code>index.html</code> in any browser. Edit the text, swap colors, or copy sections into another page. It's intentionally minimal so you can build on it quickly.</p>
+    </section>
+
+    <section id="features" style="margin-top:18px">
+      <h2>Features (brief)</h2>
+      <div class="features">
+        <div class="feature card">
+          <h3>Human language</h3>
+          <p>Talk like a person. Use short sentences. Avoid long paragraphs unless you must.</p>
+        </div>
+
+        <div class="feature card">
+          <h3>Accessible structure</h3>
+          <p>Semantic headings, clear labels, and friendly link text help everyone navigate.</p>
+        </div>
+
+        <div class="feature card">
+          <h3>One-file starter</h3>
+          <p>No build tools. Save the file and open it — perfect for prototypes and learning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:20px">
+      <h2>Say hello</h2>
+      <p>If you want to reach out, use the form below. Keep it short — I promise to read it.</p>
+
+      
+      <form onsubmit="event.preventDefault(); alert('Thanks — your message is saved locally in the browser console.'); console.log({name: this.name.value, email: this.email.value, message: this.message.value}); this.reset();">
+        <label>
+          Your name
+          <input name="name" type="text" placeholder="Anna" required />
+        </label>
+
+        <label>
+          Your email
+          <input name="email" type="email" placeholder="anna@example.com" required />
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" rows="4" placeholder="Want to say something friendly?" required></textarea>
+        </label>
+
+        <div style="display:flex;gap:8px;align-items:center">
+          <button type="submit">Send</button>
+          <small class="note">We won't spam you. This form is just a demo.</small>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <p>Made with a friendly voice — feel free to copy and adapt. • <em>Need this in a different style or with real backend support?</em> Tell me what you want and I’ll help.</p>
+    </footer>
+  </main>
+</body>
+</html>

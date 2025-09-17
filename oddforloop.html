@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odd Numbers with For Loop</title>
+</head>
+<body>
+  <h2>Odd Numbers using For Loop</h2>
+  <p id="output"></p>
+  <script>
+    let result = "";
+for (let i = 1; i <= 20; i++) {
+      if (i % 2 !== 0) {
+        result += i + "<br>";
+      }
+    }
+    document.getElementById("output").innerHTML = result;
+  </script>
+</body>
+</html>

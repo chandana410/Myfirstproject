@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Function</title>
+  <style>
+    button {
+      font-size: 20px;       
+      padding: 15px 30px;    
+      border-radius: 10px;   
+      background-color: rgb(230, 215, 88);
+      cursor: pointer;
+    }
+
+    #output {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2></h2>
+
+  <button onclick="showMessage()">Click Me</button>
+
+  <p id="output"></p>
+
+  <script>
+    function showMessage() {
+      document.getElementById("output").innerHTML = "Welcome! I believe every day is a new beginning.";
+      document.body.style.backgroundColor = "lightblue";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Loop with Array</title>
+</head>
+<body>
+  <h2>For Loop Initializing Array</h2>
+  <p id="output"></p>
+
+  <script>
+    let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+
+    let result = "";
+    for (let i = 0; i < fruits.length; i++) {
+      result += "Fruit " + (i + 1) + ": " + fruits[i] + "<br>";
+    }
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+</body>
+</html>
